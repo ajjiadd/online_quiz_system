@@ -1,6 +1,6 @@
 <?php
 // add_question.php - CRUD for questions (Create/Update/Delete)
-// Fixed: Absolute + safe
+// Fixed: Users cannot access - redirect to dashboard if not admin
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -9,11 +9,17 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+// NEW: Role check - only admin can access
+if ($_SESSION['role'] != 'admin') {
+    header("Location: /online_quiz_system/dashboard.php");
+    exit();
+}
+
 include 'config.php';
 include 'includes/header.php';
 include 'models/db_functions.php';
 
-$user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['user_id'];  // Admin user_id
 $msg = '';
 $action = $_GET['action'] ?? 'add';
 $q_id = (int)($_GET['id'] ?? 0);
@@ -66,7 +72,7 @@ if ($action == 'edit') {
 <div style="max-width: 600px; margin: 0 auto;">
     <?php echo $msg; ?>
 
-    <h2><?php echo ucfirst($action); ?> Question</h2>
+    <h2><?php echo ucfirst($action); ?> Question (Admin Only)</h2>
     <form id="questionForm" method="POST" onsubmit="return validateForm('questionForm')">
         <textarea name="question" placeholder="Enter question" required><?php echo htmlspecialchars($current_q['question'] ?? ''); ?></textarea>
         <input type="text" name="option_a" placeholder="Option A" required value="<?php echo htmlspecialchars($current_q['option_a'] ?? ''); ?>">

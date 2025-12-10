@@ -1,6 +1,5 @@
 <?php
-// includes/header.php - Common header with nav (BD Govt style: green header)
-// Fixed: Conditional session_start to avoid "already active" notice
+
 if (session_status() == PHP_SESSION_NONE) {
     session_start();  // Start only if not active
 }

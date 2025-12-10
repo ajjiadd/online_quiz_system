@@ -1,14 +1,74 @@
-<!-- index.html - Welcome page with links (Static HTML, links to PHP) -->
+<!-- index.html - Professional Home Page: Enhanced with info, features, and BD Govt style -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Online Quiz System</title>
-    <link rel="stylesheet" href="/online_quiz_system/assets/style.css">  <!-- Fixed absolute path -->
+    <title>Welcome to Online Quiz System - Professional Learning Platform</title>
+    <link rel="stylesheet" href="/online_quiz_system/assets/style.css"> <!-- Existing CSS -->
+    <style>
+        /* internal css */
+        .hero {
+            background: linear-gradient(rgba(0, 100, 0, 0.8), rgba(0, 100, 0, 0.8));
+
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .hero:hover {
+            transform: scale(1.02);
+        }
+
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 6px 12px rgba(0, 100, 0, 0.2);
+        }
+
+        .feature-card h3 {
+            color: #006400;
+            margin-bottom: 10px;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 40px 0;
+            background: #f9f9f9;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+
+        .about {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
 </head>
+
 <body>
-    <header class="header">  <!-- Reuse style -->
+    <header class="header"> 
         <div class="container">
             <h1>🧠 Online Quiz System</h1>
             <nav>
@@ -16,18 +76,68 @@
             </nav>
         </div>
     </header>
+
     <main class="container">
-        <div style="text-align: center; padding: 50px 0;">
-            <h2>Welcome to Our Simple Quiz App!</h2>
-            <p>Login or Sign Up to start quizzing. Built with PHP & MySQL.</p>
-            <a href="/online_quiz_system/login.php" class="btn" style="display: inline-block; margin-top: 20px;">Get Started</a>
-        </div>
+        <br>
+        <!-- Hero Section: Eye-catching intro -->
+        <section class="hero">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Discover Knowledge with Interactive Quizzes</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">A professional platform for users to test skills and
+                admins to manage content. Built with PHP, MySQL, and responsive design.</p>
+            <a href="/online_quiz_system/login.php" class="btn" style="font-size: 1.1rem; padding: 15px 30px;">Start
+                Your Quiz Journey</a>
+        </section>
+
+        <!-- About Section: More Info -->
+        <section class="about">
+            <h2>About Our Quiz System</h2>
+            <p>This Online Quiz System is designed for educational and professional use, inspired by Bangladesh
+                Government standards. Users can securely sign up, take quizzes, and track scores. Admins have full
+                control over question management. Fully responsive for mobile and desktop – perfect for learning on the
+                go!</p>
+        </section>
+
+        <!-- Features Section: Bullet-like cards for professionalism -->
+        <section>
+            <h2 style="text-align: center; margin-bottom: 30px; color: #006400;">Key Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>🔐 Secure User Login</h3>
+                    <p>Easy sign up and login with role-based access. Users take quizzes; admins manage everything.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📝 Interactive Quizzes</h3>
+                    <p>Multiple-choice questions with instant scoring. Track your progress and improve over time.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>👨‍💼 Admin Dashboard</h3>
+                    <p>Admins can add, edit, or delete questions. Full CRUD functionality for content control.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📱 Responsive Design</h3>
+                    <p>Works seamlessly on mobiles (375px+) and desktops (1024px+). Clean, government-inspired UI.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call-to-Action Section -->
+        <section class="cta-section">
+            <h2>Ready to Test Your Knowledge?</h2>
+            <p>Join thousands of learners using our platform. Sign up today!</p>
+            <a href="/online_quiz_system/login.php" class="btn" style="font-size: 1.1rem; padding: 15px 30px;">Get
+                Started Now</a>
+        </section>
     </main>
+
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Online Quiz System.</p>
+            <p>&copy; 2025 Online Quiz System. Developed for Educational Excellence. | <a href="#about"
+                    style="color: white; text-decoration: underline;">About</a> | <a href="#features"
+                    style="color: white; text-decoration: underline;">Features</a> | Contact: info@quizsystem.bd</p>
         </div>
     </footer>
-    <script src="/online_quiz_system/assets/script.js"></script>  <!-- Fixed absolute -->
+
+    <script src="/online_quiz_system/assets/script.js"></script> <!-- Existing JS -->
 </body>
+
 </html>

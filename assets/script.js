@@ -1,4 +1,4 @@
-// assets/script.js - Beginner JS: Form validation + quiz scoring
+
 
 // Function 1: Validate forms (simple check)
 function validateForm(formId) {
