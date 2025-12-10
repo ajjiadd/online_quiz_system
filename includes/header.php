@@ -1,5 +1,9 @@
 <?php
-session_start();
+// includes/header.php - Common header with nav (BD Govt style: green header)
+// Fixed: Conditional session_start to avoid "already active" notice
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();  // Start only if not active
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +11,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Quiz System</title>
-    <link rel="stylesheet" href="../assets/style.css">  <!-- Link to CSS -->
+    <link rel="stylesheet" href="/online_quiz_system/assets/style.css">  <!-- Fixed: Absolute path from root -->
 </head>
 <body>
     <header class="header">  <!-- Green header like BD Govt -->
@@ -15,14 +19,14 @@ session_start();
             <h1>🧠 Online Quiz System</h1>  <!-- Emoji for fun -->
             <nav>
                 <?php if (isset($_SESSION['user_id'])): ?>  <!-- If logged in -->
-                    <a href="dashboard.php">Dashboard</a>
-                    <a href="quiz.php">Take Quiz</a>
-                    <?php if ($_SESSION['role'] == 'admin'): ?>
-                        <a href="add_question.php">Manage Questions</a>
+                    <a href="/online_quiz_system/dashboard.php">Dashboard</a>  <!-- Absolute links for safety -->
+                    <a href="/online_quiz_system/quiz.php">Take Quiz</a>
+                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
+                        <a href="/online_quiz_system/add_question.php">Manage Questions</a>
                     <?php endif; ?>
-                    <a href="logout.php">Logout (<?php echo $_SESSION['username']; ?>)</a>
+                    <a href="/online_quiz_system/logout.php">Logout (<?php echo $_SESSION['username'] ?? ''; ?>)</a>
                 <?php else: ?>
-                    <a href="login.php">Login</a>
+                    <a href="/online_quiz_system/login.php">Login</a>
                 <?php endif; ?>
             </nav>
         </div>
