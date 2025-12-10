@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;  /* Simple font */
+    background-color: #f4f4f4;  /* Light gray bg */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header: Dark green like govt sites */
+.header {
+    background-color: #006400;  /* Dark green */
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.header nav a:hover {
+    background-color: #004d00;  /* Darker green on hover */
+}
+
+/* Main content */
+main {
+    min-height: 70vh;
+    padding: 20px 0;
+}
+
+/* Forms: Clean white boxes */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+input[type="text"], input[type="password"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button, .btn {
+    background-color: #006400;  /* Green button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button:hover, .btn:hover {
+    background-color: #004d00;
+}
+
+/* Tables: Simple striped */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #006400;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Quiz specific: Radio buttons */
+.quiz-option {
+    margin: 10px 0;
+}
+
+.quiz-option label {
+    display: block;
+    margin: 5px 0;
+}
+
+/* Success/Error messages */
+.success { color: green; background: #d4edda; padding: 10px; border-radius: 5px; margin: 10px 0; }
+.error { color: red; background: #f8d7da; padding: 10px; border-radius: 5px; margin: 10px 0; }
+
+/* Footer: Red like official */
+.footer {
+    background-color: #dc143c;  /* Red */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+}
+
+/* Responsive: Mobile first (375px) */
+@media (max-width: 768px) {
+    .container { padding: 0 10px; }
+    .header h1 { font-size: 1.2rem; }
+    .header nav a { display: block; margin: 5px 0; }  /* Stack nav on mobile */
+    form { padding: 15px; }
+    table { font-size: 14px; }  /* Smaller table on mobile */
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+    .header nav a { margin-left: 20px; }
+    table { font-size: 16px; }
+}
